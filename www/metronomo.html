@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <style>
+        .btn {
+            border-radius: 5px;
+            display: block;
+            background: green;
+            float: left;
+            clear: none;
+            color: white;
+            padding: 4px 8px;
+            margin: 8px 8px 8px 0;
+            cursor: pointer;
+        }
+        .stop {
+            background: red;
+        }
+    </style>
+
+    <noscript>
+        <style type="text/css">.wpb_animate_when_almost_visible{opacity:1}
+        </style>
+    </noscript>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/metronomo.js"></script>
+
+</head>
+<body ng-app="starter"  class="home-page home page page-id-1904 page-template page-template-notitle
+    page-template-notitle-php d5 g4 p4 c2 logged-out wpb-js-composer js-comp-ver-4.12 vc_responsive">
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Metrônomo</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div><input type="number" name="bpm" value="60" size="3" /> bpm</div>
+        <div class="start btn">Start</div>
+        <div class="stop btn">Stop</div>
+        <hr>
+        <!--
+        <div id="log-value"></div>
+        <div id="log-value2"></div>
+        <div id="log-value3"></div>
+        <div id="log-value4"></div>
+        <div id="log-value5"></div>
+        <div id="log-value6"></div>
+        <div id="log-value7"></div>
+        <div id="log-value8"></div>
+        <div id="log-value9"></div>
+        <div id="log-value10"></div>
+        <div id="log-magnitudes"></div>
+        -->
+        <hr>
+    </ion-content>
+</ion-pane>
+</body>
+
+<script src="js/tunner.js"></script>
+<script src="js/gauge-init.js"></script>
+</html>
