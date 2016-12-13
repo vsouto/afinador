@@ -173,6 +173,7 @@ var amp;
 // Create an AudioCOntext and a JavaScriptNode.
 function initAudio()
 {
+    console.log('iniciando audio');
     if( context )
     {
         oscillator = context.createOscillator();
@@ -216,12 +217,15 @@ function beep() {
     startTone(200);
 }
 
-$('.stop').click(function() {
+/*
+$('#stop-btn').click(function() {
     clearInterval($t);
 });
 
-$('.start').click(function() {
+$('#start-btn').click(function() {
+    console.log('oi');
     clearInterval($t);
     $newbpm = 1000/(Math.round($('input').val()/60));
     $t=setInterval(beep,$newbpm);
 });
+    */

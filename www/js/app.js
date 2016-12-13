@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+var app = angular.module('starter', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,4 +21,34 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-})
+});
+
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+      .state('index', {
+        url: '/',
+        templateUrl: 'home.html'
+      })
+      .state('afinador', {
+          url: '/afinador',
+          templateUrl: 'afinador.html'
+      })
+      .state('metronomo', {
+          url: '/metronomo',
+          templateUrl: 'metronomo.html'
+      });
+  $urlRouterProvider.otherwise('/');
+});
+
+app.controller('MainCtrl', function($scope) {
+    $scope.start = function() {
+        console.log('starting metronomo');
+        clearInterval($t);
+        $newbpm = 1000/(Math.round($('input').val()/60));
+        $t=setInterval(beep,$newbpm);
+    };
+    $scope.stop = function() {
+        console.log('stopnig metronomo');
+        clearInterval($t);
+    };
+});
